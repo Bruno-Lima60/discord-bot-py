@@ -7,9 +7,11 @@ class Ban(commands.Cog):
 
     @commands.command()
     async def ban(self, ctx, user: discord.Member, *, reason=None):
+        if reason is None:
+            reason = "No Reason Provided"
         if ctx.author.guild_permissions.ban_members:
             await ctx.guild.ban(user, reason=reason)
-            await ctx.send(f"`{user.name}` foi banido com sucesso pelo motivo: {reason}")
+            await ctx.send(f'`{user.name}` foi banido com sucesso pelo motivo: "{reason}"!')
         else:
             await ctx.send("Você não tem permissão para usar este comando!")
             return
