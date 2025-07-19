@@ -25,11 +25,17 @@ async def on_message(message):
     
     await bot.process_commands(message)
 
+async def load_cogs():
+    for filename in os.listdir('./cogs'):
+        if filename.endswith('.py'):
+            await bot.load_extension(f'cogs.{filename[:-3]}')
+
 async def main():
     token = os.getenv('DISCORD_TOKEN')
     if token is None:
         raise ValueError("Token environment variable not set!")
 
+    await load_cogs()
     await bot.start(token)
 
 import asyncio
