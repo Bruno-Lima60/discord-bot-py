@@ -33,7 +33,7 @@ async def load_cogs():
 async def main():
     token = os.getenv('DISCORD_TOKEN')
     if token is None:
-        raise ValueError("Token environment variable not set!")
+        raise ValueError("Token não existe!")
 
     await load_cogs()
     await bot.start(token)

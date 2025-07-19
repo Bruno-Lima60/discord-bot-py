@@ -1,1 +1,2 @@
 INFO:discord.client:logging in using static token
+INFO:discord.gateway:Shard ID None has connected to Gateway (Session ID: caa3f94fa1525c3af0867f9bfa00faa6).

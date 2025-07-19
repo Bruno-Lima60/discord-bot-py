@@ -11,15 +11,15 @@ class Kick(commands.Cog):
             reason = "No Reason Provided"
         if ctx.author.guild_permissions.kick_members:
             await user.kick(reason=reason)
-            await ctx.send(f'`{user.name}` foi expulso do servidor com sucesso, pelo motivo: "{reason}"!')
+            await ctx.send(f'✅ {user.mention} foi expulso do servidor com sucesso, pelo motivo: "{reason}"!')
         else:
-            await ctx.send("Você não tem permissão para usar este comando!")
+            await ctx.send("❌ Você não tem permissão para usar este comando!")
             return
 
     @kick.error
     async def ban_error(self, ctx, error):
         if isinstance(error, commands.MissingRequiredArgument):
-            await ctx.send("O comando não foi feito do jeito certo!\nSiga o exemplo: `.kick @user menor de idade`")
+            await ctx.send("❌ O comando não foi feito do jeito certo!\nSiga o exemplo: `.kick @user menor de idade`")
 
 async def setup(bot):
     await bot.add_cog(Kick(bot))
