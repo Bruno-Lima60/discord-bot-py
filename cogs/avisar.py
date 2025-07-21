@@ -9,11 +9,11 @@ class Avisar(commands.Cog):
 
     @commands.command()
     async def avisar(self, ctx, user: discord.User, *, reason=None):
-        if reason is None:
-            await ctx.send("❌ É necessário que cite um motivo para dar um aviso a alguém!")
-            return
-            
         if ctx.author.guild_permissions.kick_members and ctx.author.guild_permissions.ban_members:
+            if reason is None:
+                await ctx.send("❌ É necessário que cite um motivo para dar um aviso a alguém!")
+                return
+        
             if not os.path.exists('warnings.json'):
                 with open('warnings.json', 'w') as f:
                     json.dump({}, f)
