@@ -28,8 +28,8 @@ class Avisar(commands.Cog):
                 warnings[str(user.id)] = []
 
             warnings[str(user.id)].append({
-                "reason": reason,
-                "issued_by": f"{ctx.author.mention} `({ctx.author.name})`"
+                "motivo": reason,
+                "emitido_por": f"{ctx.author.mention} `({ctx.author.name})`"
             })
 
             with open('warnings.json', 'w') as f:
