@@ -3,7 +3,7 @@ from discord.ext import commands
 import json
 import os
 
-class removerAviso(commands.Cog):
+class RemoverAviso(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
 
@@ -37,5 +37,5 @@ class removerAviso(commands.Cog):
             await ctx.send("Inválido!")
 
 async def setup(bot):
-    await bot.add_cog(removerAviso(bot))
+    await bot.add_cog(RemoverAviso(bot))
     print("RemoverAviso - Pronto!")
