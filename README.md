@@ -1,6 +1,6 @@
 ﻿# discord-bot-py
 
-Este é um bot multifuncional para Discord desenvolvido em Python, focado em auxiliar na moderação e gerenciamento de membros.
+Este é um bot multifuncional para Discord desenvolvido em Python, focado em ajudar com a moderação e gerenciamento de membros.
 
 ## Funcionalidades
 
@@ -49,3 +49,4 @@ O bot inclui os seguintes comandos e funcionalidades principais:
     ```bash
     python main.py
     ```
+
